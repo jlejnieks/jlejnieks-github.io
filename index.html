@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JLWebsite</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- bootstrap-social -->
+    <link rel="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Bootstrap, included from a CDN (Content Delivery Network). MaxCDN provides CDN support for Bootstrap's CSS and JavaScript -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- D3.js -->
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <!-- MathJax -->
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML" async>
+    </script>
+    <script src="main.js"></script>
+</head>
+<style>
+    .fakeimg {
+        height: 200px;
+        background: #aaa;
+    }
+    /* Stylingh social media buttons */
+    
+    .fa {
+        padding: 20px;
+        font-size: 30px;
+        width: 50px;
+        text-align: center;
+        text-decoration: none;
+        margin: 5px 2px;
+    }
+    
+    .fa:hover {
+        opacity: 0.7;
+    }
+    
+    .fa-linkedin {
+        background: #007bb5;
+        color: white;
+    }
+    
+    .fa-github {
+        background: #211f1f;
+        color: white;
+    }
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    
+    .navbar {
+        margin-bottom: 0;
+        border-radius: 0;
+        background-color: darkblue;
+    }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    
+    @media screen and (max-width: 767px) {
+        .sidenav {
+            height: auto;
+            padding: 15px;
+        }
+        .row.content {
+            height: auto;
+        }
+    }
+</style>
+
+
+<body>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>The Homepage of Jānis Lejnieks</h1>
+        <!-- Bootstrap Glyph -->
+        <p><span class="glyphicon glyphicon-envelope"></span> jaanislejnieks@gmail.com</p>
+
+
+        <!--Locale Date:Start -->
+        <script>
+            var dateObj = new Date();
+            var options = {
+                weekday: "long",
+                year: "numeric",
+                month: "short",
+                day: "numeric"
+            };
+            /* Commented out */
+            /*document.write(dateObj.toLocaleDateString("en-US")); */
+            document.write("<br>");
+            document.write(dateObj.toLocaleDateString("en-US", options));
+        </script>
+        <!-- Locale Date: End -->
+        <p>
+            <!-- Digital Clock: Start -->
+            <script>
+                function startTime() {
+                    var today = new Date();
+                    var h = today.getHours();
+                    var m = today.getMinutes();
+                    var s = today.getSeconds();
+                    m = checkTime(m);
+                    s = checkTime(s);
+                    document.getElementById('txt').innerHTML =
+                        h + ":" + m + ":" + s;
+                    var t = setTimeout(startTime, 500);
+                }
+
+                function checkTime(i) {
+                    if (i < 10) {
+                        i = "0" + i
+                    }; // add zero in front of numbers < 10
+                    return i;
+                }
+            </script>
+
+            <body onload="startTime()">
+                <div id="txt"></div>
+            </body>
+        </p>
+        <!-- Digital Clock: End -->
+    </div>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+                <a class="navbar-brand" href="#">JL Website</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <!--Home-->
+                    <li>
+                        <a href="index.html">
+                            <span class="glyphicon glyphicon-home"></span> Home
+                        </a>
+                    </li>
+                    <li>
+                        <!-- Home (commented out) -->
+                        <!-- <li class="active"><a href="#">Home</a></li> -->
+                        <li><a href="#">Web Projects</a></li>
+                        <li><a href="#">Publications</a></li>
+                        <li><a href="#">Contact</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                <!--<div class="JL.jpg">Jānis Lejnieks</div>-->
+                <img src="JL.jpg" width="115" height="150">
+                <p>Jānis Lejnieks</p>
+
+
+                <ul class="nav nav-pills nav-stacked">
+                    <!--Commented out-->
+                    <!-- <li class="active"><a href="#">Link 1</a></li> -->
+
+                    <!--Social Media Buttons-->
+                    <li>
+                        <a href="https://github.com/jlejnieks" class="fa fa-github"></a>
+                    </li>
+                    <li>
+                        <a href="https://lv.linkedin.com/in/jlejnieks" class="fa fa-linkedin"></a>
+                    </li>
+
+                </ul>
+                <hr class="hidden-sm hidden-md hidden-lg">
+            </div>
+            <div class="col-sm-8">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <p>&#169 2018 Jānis Lejnieks</p>
+    </div>
+
+</body>
+
+</html>
